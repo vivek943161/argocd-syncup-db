@@ -16,9 +16,12 @@ spec:
     spec:
       containers:
       - name: db
-        image: mysql:5.7
+        image: mysql
         ports:
         - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "rootpassword"
 ---
 apiVersion: v1
 kind: Namespace
